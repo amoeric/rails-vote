@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # get '/', controller: 'pages', action: 'home' 以前專案寫法
+  root 'candidates#index'    #等於get '/', to: 'candidates#index'
+  resources :candidates     #新增 讀取 更新 刪除 CRUD
 end

@@ -1,0 +1,19 @@
+form#candidate_form {
+    input[type="text"], textarea{
+        font-size: 30px;
+        vertical-align: middle;
+    }
+    div{
+        margin: 10px 0;
+    }
+    input[type="submit"]{
+        padding: 20px;
+        background-color: #e74c3c;
+        color: white;
+        border-radius: 18px;
+        cursor: pointer;
+    }
+}
+a{
+    color: black;
+}
