@@ -13,7 +13,15 @@ form#candidate_form {
         border-radius: 18px;
         cursor: pointer;
     }
+    div .field_with_errors{
+        display: inline;
+        input{
+            border:1px solid red;
+        }
+        label{
+            color:  red;
+            font-weight: 700;
+        }
+    }
 }
-a{
-    color: black;
-}
+a{ color: black; }
