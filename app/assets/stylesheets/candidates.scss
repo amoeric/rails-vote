@@ -25,3 +25,40 @@ form#candidate_form {
     }
 }
 a{ color: black; }
+
+.candidates_wrap{
+    width: 100%;
+    min-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ff6b81;
+    
+    .candidate{
+        width: 360px;
+        margin: 10px auto;
+        background-color: #dfe6e9;
+        border-radius: 10px;
+        .candidate_pic img{
+            width: 100%;
+        }
+        .candidate_info{
+            padding: 0 5px;
+            a{
+                display: block;
+                width: 100%;
+                background-color: #000;
+                color: white;
+                text-align: center;
+                font-size: 30px;
+                text-decoration: none;
+                border-radius: 10px;
+                transition: .5s;
+            }
+            a:hover{
+                background-color: #fff;
+                color: black;
+            }
+        }
+    }
+}

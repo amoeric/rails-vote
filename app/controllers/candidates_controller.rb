@@ -1,13 +1,12 @@
 class CandidatesController < ApplicationController  
     def index
+        @candidates = Candidate.all #多人用複數
     end
     def new
         @candidate = Candidate.new
     end
     def create
         @candidate = Candidate.new(candidate_params)
-        
-        
 
         if @candidate.save
             flash[:notice] = '新增成功'
