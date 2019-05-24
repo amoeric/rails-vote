@@ -32,21 +32,21 @@ a{ color: black; }
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: #ff6b81;
+    background-color: #dfe4ea;
     
     .candidate{
-        width: 360px;
+        width: 30%;
         margin: 10px auto;
         background-color: #dfe6e9;
         border-radius: 10px;
-        .candidate_pic img{
-            width: 100%;
-        }
+        border:1px solid #747d8c;
+        overflow: hidden;
+        .candidate_pic img{ width: 100%; }
         .candidate_info{
             padding: 0 5px;
             a{
-                display: block;
-                width: 100%;
+                display: inline-block;
+                width: 23%;
                 background-color: #000;
                 color: white;
                 text-align: center;
@@ -54,6 +54,10 @@ a{ color: black; }
                 text-decoration: none;
                 border-radius: 10px;
                 transition: .5s;
+                margin: 0 auto;
+            }
+            a:last-child{
+                background-color: red;
             }
             a:hover{
                 background-color: #fff;
@@ -61,4 +65,5 @@ a{ color: black; }
             }
         }
     }
+    
 }
