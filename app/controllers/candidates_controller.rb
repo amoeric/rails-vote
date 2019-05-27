@@ -1,10 +1,10 @@
 class CandidatesController < ApplicationController  
   before_action :find_candidate, only: [:show, :edit, :update, :destroy, :vote]
-
+  before_action :authenticate_user!, except: [:index, :edit]
   def index
-    @candidates = Candidate.all #多人用複數
+    @candidates = Candidate.all.page(params[:page]).per(3) #多人用複數
   end
-
+  
   def show
   end
 
