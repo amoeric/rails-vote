@@ -9,7 +9,8 @@
 <% @candidates.each do |candidate| %>
     <div class="candidate">
         <div class="candidate_pic"> 
-            <img src='/assets/cat-0023.jpg'/>
+            
+            <img src='/assets/cat.gif'/>
         </div>
         <div class="candidate_info">
             <h2>得票數：<%= candidate.vote %></h2>
@@ -21,7 +22,8 @@
             <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'}%>
         </div>
     </div>
+    
 <% end %>
-  
+
 
 </div>

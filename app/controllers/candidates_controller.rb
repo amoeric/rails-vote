@@ -6,8 +6,9 @@ class CandidatesController < ApplicationController
   end
   
   def show
+    
   end
-
+  
   def edit
   end
   def update
@@ -36,9 +37,11 @@ class CandidatesController < ApplicationController
   end
 
   def vote
-    @candidate.increment(:vote)
+    #已登入者的角度新增
+    current_user.votes.create(ip_address: request.remote_ip, candidate: @candidate)
+    # @candidate.increment(:vote)
     # @candidate.vote = @candidate.vote + 1
-    @candidate.save
+    # @candidate.save
     redirect_to root_path, notice: '投票完成'
   end
   private
