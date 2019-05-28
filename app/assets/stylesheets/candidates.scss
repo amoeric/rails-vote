@@ -41,9 +41,21 @@ a{ color: black; display: inline-block;}
         border-radius: 10px;
         border:1px solid #747d8c;
         overflow: hidden;
+        position: relative;
         .candidate_pic img{ width: 100%; }
         .candidate_info{
+            
             padding: 0 5px;
+            .vote{
+                width: 100px;
+                text-align: center;
+                background-color: red;
+                color: #dfe4ea;
+                text-align: right;
+                position: absolute;
+                top: 0;
+                right: 5px;
+            }
             a{
                 display: inline-block;
                 width: 23%;

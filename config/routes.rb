@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     end
   end
   
-  # patch "/candidates/:id/vote", to: "candidates#vote"
+  namespace :admin do 
+    root "pages#index"
+    resources :candidates
+  end
 
 end

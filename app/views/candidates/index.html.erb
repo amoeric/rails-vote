@@ -13,13 +13,13 @@
             <img src='/assets/cat.gif'/>
         </div>
         <div class="candidate_info">
-            <h2>得票數：<%= candidate.vote %></h2>
+            <h2 class="vote"><%= candidate.vote %>票</h2>
             <h1><%= candidate.name%> (<%= candidate.age %>)</h1>
             <h2><%= candidate.party%></h2>
             <%= link_to "看政見", candidate, class:'more_detail'%>
             <%= link_to  "修改",  edit_candidate_path(candidate) if user_signed_in?%> 
             <%= link_to  "投票",  vote_candidate_path(candidate), method:'patch', data: { confirm: '確認投票？'} if user_signed_in?%>
-            <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'}%>
+            <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'} if user_signed_in?%>
         </div>
     </div>
     
