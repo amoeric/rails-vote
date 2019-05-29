@@ -1,6 +1,6 @@
 <h1>候選人列表</h1>
 
-<%= link_to  "新增候選人",  new_candidate_path %>
+
 <%= paginate @candidates, outer_window: 3 %>
 
 
@@ -9,7 +9,6 @@
 <% @candidates.each do |candidate| %>
     <div class="candidate">
         <div class="candidate_pic"> 
-            
             <img src='/assets/cat.gif'/>
         </div>
         <div class="candidate_info">
@@ -17,9 +16,9 @@
             <h1><%= candidate.name%> (<%= candidate.age %>)</h1>
             <h2><%= candidate.party%></h2>
             <%= link_to "看政見", candidate, class:'more_detail'%>
-            <%= link_to  "修改",  edit_candidate_path(candidate) if user_signed_in?%> 
+            <%= link_to  "修改",  edit_candidate_path(candidate) if policy(candidate).edit?%> 
             <%= link_to  "投票",  vote_candidate_path(candidate), method:'patch', data: { confirm: '確認投票？'} if user_signed_in?%>
-            <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'} if user_signed_in?%>
+            <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'} if policy(candidate).destory?%>
         </div>
     </div>
     

@@ -1,4 +1,7 @@
 class Admin::PagesController < Admin::BaseController
-    def index 
+    
+    def index
+        authorize Candidate
     end
+    
 end
