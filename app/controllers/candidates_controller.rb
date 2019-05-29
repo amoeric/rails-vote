@@ -50,7 +50,7 @@ class CandidatesController < ApplicationController
   end
   private
   def candidate_params
-    params.require(:candidate).permit(:name, :age, :party, :platform)
+    params.require(:candidate).permit(:name, :age, :party, :platform, :avatar)
   end
   def find_candidate
     @candidate = Candidate.find_by(id: params[:id])

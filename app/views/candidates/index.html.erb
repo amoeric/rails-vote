@@ -9,7 +9,8 @@
 <% @candidates.each do |candidate| %>
     <div class="candidate">
         <div class="candidate_pic"> 
-            <img src='/assets/cat.gif'/>
+            <%= image_tag candidate.avatar_url(:small) if candidate.avatar? %>
+            
         </div>
         <div class="candidate_info">
             <h2 class="vote"><%= candidate.vote %>票</h2>
@@ -18,7 +19,7 @@
             <%= link_to "看政見", candidate, class:'more_detail'%>
             <%= link_to  "修改",  edit_candidate_path(candidate) if policy(candidate).edit?%> 
             <%= link_to  "投票",  vote_candidate_path(candidate), method:'patch', data: { confirm: '確認投票？'} if user_signed_in?%>
-            <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'} if policy(candidate).destory?%>
+            <%= link_to  "刪除",  candidate, method: 'delete', data: { confirm: '確認刪除？'} if policy(candidate).destroy?%>
         </div>
     </div>
     

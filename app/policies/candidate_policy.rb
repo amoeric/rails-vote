@@ -14,7 +14,7 @@ class CandidatePolicy
     user && user.admin?
   end
 
-  def destory?
+  def destroy?
     user && user.admin?
   end
 
