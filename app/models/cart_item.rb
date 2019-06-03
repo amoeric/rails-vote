@@ -8,4 +8,12 @@ class CartItem
     def increment(n = 1)
         @quantity = quantity + n
     end
+
+    def product
+        Product.find_by(id: product_id)
+    end
+
+    def total_price
+        product.price * quantity
+    end
 end
