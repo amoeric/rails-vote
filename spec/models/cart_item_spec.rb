@@ -4,7 +4,7 @@ RSpec.describe CartItem, type: :model do
   let(:cart){ Cart.new }
   it "每個 Cart Item 都可以計算它自己的金額（小計）" do 
     p1 = create(:product, price: 100)#Product.create  rails_helper做得好事
-    p2 = create(:product, price: 50)
+    p2 = create(:product, price: 50)#:product 是 products.rb 的 :product?
 
     3.times{ cart.add_item(p1.id) }
     2.times{ cart.add_item(p2.id) }

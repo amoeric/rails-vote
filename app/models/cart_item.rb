@@ -14,6 +14,7 @@ class CartItem
     end
 
     def total_price
+        
         product.price * quantity
     end
 end
