@@ -41,14 +41,10 @@ class Cart
         if hash && hash[:items] 
             #重組
             #組出充滿 CartItem 的陣列
-            all_items = hash[:items].map { |item|
-                CartItem.new(item[:product_id], item[:quantity])
-            }
-            Cart.new(all_items)
-
+            new hash[:items].map { |item| CartItem.new(item[:product_id], item[:quantity]) }
         else
             #新車
-            Cart.new
+            new
         end
     end
 
