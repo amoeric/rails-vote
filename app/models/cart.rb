@@ -6,8 +6,9 @@ class Cart
     #items會去找reader的items方法
     def add_item(product_id)
         found_item = items.find {|item| item.product_id == product_id}
+        
         if found_item
-            found_item.increment
+            found_item.quantity += 1
         else
             items << CartItem.new(product_id)
         end
@@ -33,15 +34,15 @@ class Cart
         #     { product_id: 2, quantity: 5}
         # ] 
         result = items.map { |item| 
-            { product_id: item.product_id, quantity: item.quantity } 
+            { "product_id"=> item.product_id, "quantity"=> item.quantity } 
         }
-        return { items: result}
+        return { "items" => result}
     end
     def self.from_hash(hash = nil)
-        if hash && hash[:items] 
+        if hash && hash["items"] 
             #重組
             #組出充滿 CartItem 的陣列
-            new hash[:items].map { |item| CartItem.new(item[:product_id], item[:quantity]) }
+            new hash["items"].map { |item| CartItem.new(item["product_id"], item["quantity"]) }
         else
             #新車
             new

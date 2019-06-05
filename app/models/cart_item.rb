@@ -1,5 +1,6 @@
 class CartItem
-    attr_reader :product_id, :quantity
+    attr_reader :product_id
+    attr_accessor :quantity
     def initialize(product_id, quantity = 1) #數量至少一個,且彈性
         @product_id = product_id
         @quantity = quantity

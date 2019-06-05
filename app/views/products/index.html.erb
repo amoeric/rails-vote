@@ -1,0 +1,13 @@
+<h2><%=session[:cart9527]%></h2>
+<h1>商品列表</h1>
+<ul>
+    
+    <% @products.each do |product|%> 
+    
+    <li>
+        <%= link_to  "加入購物車", add_cart_path(product.id), method: 'put' %>
+        <%= product.title%><%= product.price%>
+    </li>
+    <%end%>
+
+</ul>
