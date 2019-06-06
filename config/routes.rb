@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   root 'candidates#index'    #等於get '/', to: 'candidates#index'
   get '/history', to: 'users#history'
   
+  resources :orders, only: [:index, :show, :new, :create]
   resources :products, only: [:index, :show]
 
   resource :cart, only: [:show, :destroy] do
     collection do
       put :add, path:'add/:id' 
+      get :checkout
     end
   end
   
