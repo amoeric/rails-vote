@@ -18,8 +18,25 @@ class OrdersController < ApplicationController
         end
 
         if @order.save
-            redirect_to products_path, notice: '感謝你'
+            nonce = params[:payment_method_nonce]
+
+            result = gateway.transaction.sale(
+                amount: current_cart.total_price,
+                payment_method_nonce: nonce,
+                order_id: @order.id,
+                options: {
+                  submit_for_settlement:  true
+                }
+            )
+            if result.success? 
+                session[:cart9527] = nil
+                redirect_to products_path, notice: '感謝你'
+            else
+                render 'carts/checkout'
+            end
+            
         else
+            
             render 'carts/checkout'
         end
 

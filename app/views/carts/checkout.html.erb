@@ -5,18 +5,16 @@
     <%= f.input :phone, label: false, placeholder: '市話或行動電話'%>
     <%= f.input :address, label: false, placeholder: '收件人地址'%>
     <%= f.input :note, label: false, placeholder: '備註'%>
-    
+    <div id="payment-form"></div>    
     <%= f.submit '確認送出'%>
 <% end %>
-<div id="dropin-container"></div>
-<script src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"></script>
+
+<script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
 <script>
-        var button = document.querySelector('#submit-button');
-    
-        braintree.dropin.create({
-          authorization: '<%=@token%>',
-          container: '#dropin-container'
-        }, function (createErr, instance) {
-            alert(createErr);
+        
+
+        var clientToken = '<%=@token%>';
+         braintree.setup(clientToken, "dropin", {
+            container: "payment-form"
         });
 </script>
