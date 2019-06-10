@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get '/', controller: 'pages', action: 'home' 以前專案寫法
   root 'candidates#index'    #等於get '/', to: 'candidates#index'
   get '/history', to: 'users#history'
-  
+  get '/orders', to: 'orders#index'
   resources :orders, only: [:index, :show, :new, :create]
   resources :products, only: [:index, :show]
 

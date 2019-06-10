@@ -42,7 +42,12 @@ class OrdersController < ApplicationController
 
        
     end
-
+    def index
+        # @orders = Order.all.order(id: :desc)#把訂單照id排序
+        # @orders = Order.order(id: :desc)#把訂單照id排序，all可省略不寫
+        # @orders = Order.where(user: current_user) #訂單的角度
+        @orders = current_user.orders #目前使用者的order,因為model那邊加入default_scope所以不用加入order排序
+    end
     private
     def order_params
         params.require(:order).permit(:recipient, :phone, :address, :note)

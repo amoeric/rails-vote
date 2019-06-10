@@ -1,0 +1,11 @@
+<ul> 
+    <h1>訂單</h1>
+    <%  @orders.each do |order|%>
+    <li><%= order.recipient%></li>
+    <li><%= order.phone%></li>
+    <li><%= order.address%></li>
+    <li><%= order.note%></li>
+    <li><%= order.state%></li>
+    <% end %>
+</ul>
+
