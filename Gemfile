@@ -40,7 +40,7 @@ gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'rails_admin', '~> 1.4', '>= 1.4.2'
+gem 'rails_admin', '~> 1.4'
 gem 'paranoia', '~> 2.4', '>= 2.4.2'
 gem "braintree", "~> 2.96.0"
 gem 'figaro', '~> 1.1', '>= 1.1.1'
