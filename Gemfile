@@ -35,7 +35,7 @@ gem 'kaminari'
 # gem 'capistrano-rails', group: :development
 gem 'pundit', '~> 2.0', '>= 2.0.1'
 gem 'simple_form', '~> 4.1'
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 
 # Reduces boot times through caching; required in config/boot.rb
